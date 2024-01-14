@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var searchNickName: String = ""
+    @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
         VStack {
             Spacer()
             
             mainLogo
+                .padding(.bottom, 60)
             textField
             searchButton
                 .padding(.top, 10)
@@ -34,20 +35,15 @@ extension HomeView {
             .resizable()
             .scaledToFit()
             .frame(width: 180, height: 180)
-            .padding(.bottom, 60)
     }
     
     private var textField: some View {
-        TextField("닉네임을 입력해주세요", text: $searchNickName)
+        TextField("닉네임을 입력해주세요", text: $viewModel.searchNickName)
+            .textInputAutocapitalization(.none)
             .frame(maxWidth: .infinity)
-            .padding(.bottom, 5)
             .padding(.trailing, 25)
-            .background(
-                VStack {
-                    Spacer()
-                    Rectangle().frame(height: 1)
-                }
-            )
+            .padding(.bottom, 5)
+            .containerUnderline()
             .overlay(
                 HStack {
                     Spacer()
@@ -55,8 +51,11 @@ extension HomeView {
                         .foregroundColor(Color.black)
                         .offset(y: -2)
                 }
-                    .opacity(searchNickName.isEmpty ? 0 : 1)
-                    .animation(.bouncy, value: searchNickName)
+                    .opacity(viewModel.searchNickName.isEmpty ? 0 : 1)
+                    .animation(.bouncy, value: viewModel.searchNickName)
+                    .onTapGesture {
+                        viewModel.resetTextField()
+                    }
             )
     }
     
