@@ -1,0 +1,13 @@
+excluded:
+    - Pods
+    - MyGithubTests
+    - MyGithub/MyGithubApp.swift
+file_length:
+  warning: 500
+  error: 1200
+type_name:
+  allowed_symbols: ["_"]
+identifier_name:
+  allowed_symbols: ["_"]
+disabled_rules:
+  - trailing_comma
