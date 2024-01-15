@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import Factory
 
 struct HomeView: View {
-    @StateObject private var viewModel = HomeViewModel()
+    @InjectedObject(\.contentViewModel) private var viewModel
     
     var body: some View {
         VStack {

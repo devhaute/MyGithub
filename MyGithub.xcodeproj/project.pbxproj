@@ -12,9 +12,11 @@
 		2A82497B2B519B9600EC14CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A82497A2B519B9600EC14CE /* Preview Assets.xcassets */; };
 		2A8249852B519B9600EC14CE /* MyGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8249842B519B9600EC14CE /* MyGithubTests.swift */; };
 		2AC9E2FC2B526C410088B76E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9E2FB2B526C410088B76E /* HomeView.swift */; };
-		2AC9E3022B53DB020088B76E /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9E3012B53DB020088B76E /* Contants.swift */; };
+		2AC9E3022B53DB020088B76E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9E3012B53DB020088B76E /* Constant.swift */; };
 		2AC9E3042B53DD620088B76E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9E3032B53DD620088B76E /* HomeViewModel.swift */; };
 		2AC9E3072B53E1DD0088B76E /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9E3062B53E1DD0088B76E /* View+Extension.swift */; };
+		2AC9E30F2B53E76C0088B76E /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9E30E2B53E76C0088B76E /* Container.swift */; };
+		2AC9E3122B54276C0088B76E /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC9E3112B54276C0088B76E /* Factory */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +37,10 @@
 		2A8249802B519B9600EC14CE /* MyGithubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyGithubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8249842B519B9600EC14CE /* MyGithubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGithubTests.swift; sourceTree = "<group>"; };
 		2AC9E2FB2B526C410088B76E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		2AC9E3012B53DB020088B76E /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
+		2AC9E3012B53DB020088B76E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		2AC9E3032B53DD620088B76E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2AC9E3062B53E1DD0088B76E /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		2AC9E30E2B53E76C0088B76E /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AC9E3122B54276C0088B76E /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +115,7 @@
 		2AC9E2F02B519F1B0088B76E /* Injected */ = {
 			isa = PBXGroup;
 			children = (
+				2AC9E30E2B53E76C0088B76E /* Container.swift */,
 			);
 			path = Injected;
 			sourceTree = "<group>";
@@ -205,7 +210,7 @@
 		2AC9E3002B53DAE00088B76E /* System */ = {
 			isa = PBXGroup;
 			children = (
-				2AC9E3012B53DB020088B76E /* Contants.swift */,
+				2AC9E3012B53DB020088B76E /* Constant.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -227,6 +232,9 @@
 			dependencies = (
 			);
 			name = MyGithub;
+			packageProductDependencies = (
+				2AC9E3112B54276C0088B76E /* Factory */,
+			);
 			productName = MyGithub;
 			productReference = 2A8249702B519B9500EC14CE /* MyGithub.app */;
 			productType = "com.apple.product-type.application";
@@ -277,6 +285,9 @@
 				Base,
 			);
 			mainGroup = 2A8249672B519B9500EC14CE;
+			packageReferences = (
+				2AC9E3102B54276C0088B76E /* XCRemoteSwiftPackageReference "Factory" */,
+			);
 			productRefGroup = 2A8249712B519B9500EC14CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,8 +344,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AC9E2FC2B526C410088B76E /* HomeView.swift in Sources */,
+				2AC9E30F2B53E76C0088B76E /* Container.swift in Sources */,
 				2A8249742B519B9500EC14CE /* MyGithubApp.swift in Sources */,
-				2AC9E3022B53DB020088B76E /* Contants.swift in Sources */,
+				2AC9E3022B53DB020088B76E /* Constant.swift in Sources */,
 				2AC9E3072B53E1DD0088B76E /* View+Extension.swift in Sources */,
 				2AC9E3042B53DD620088B76E /* HomeViewModel.swift in Sources */,
 			);
@@ -619,6 +631,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2AC9E3102B54276C0088B76E /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2AC9E3112B54276C0088B76E /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AC9E3102B54276C0088B76E /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A8249682B519B9500EC14CE /* Project object */;
 }
