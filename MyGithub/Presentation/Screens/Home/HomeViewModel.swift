@@ -9,6 +9,9 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
     @Published var searchNickName: String = ""
+    var searchable: Bool {
+        !searchNickName.isEmpty
+    }
 }
 
 // MARK: - Public Functions

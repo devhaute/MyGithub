@@ -12,27 +12,30 @@ struct HomeView: View {
     @InjectedObject(\.contentViewModel) private var viewModel
     
     var body: some View {
-        VStack {
-            Spacer()
-            
-            mainLogo
-                .padding(.bottom, 60)
-            textField
-            searchButton
-                .padding(.top, 10)
-            
-            Spacer()
-            Spacer()
-            
-            Text("Created by Chanho Lee")
+        NavigationView {
+            VStack {
+                Spacer()
+                
+                mainLogo
+                    .padding(.bottom, 60)
+                textField
+                searchButton
+                    .padding(.top, 10)
+                
+                Spacer()
+                Spacer()
+                
+                Text("Created by Chanho Lee")
+                    .font(.caption)
+            }
+            .padding(.horizontal, 30)
         }
-        .padding(.horizontal, 30)
     }
 }
 
 extension HomeView {
     private var mainLogo: some View {
-        Image(Constant.Image.mainLogo)
+        Image.App.mainLogo
             .resizable()
             .scaledToFit()
             .frame(width: 180, height: 180)
@@ -48,7 +51,7 @@ extension HomeView {
             .overlay(
                 HStack {
                     Spacer()
-                    Image(systemName: "multiply.circle.fill")
+                    Image.App.xMark
                         .foregroundColor(Color.black)
                         .offset(y: -2)
                 }
@@ -61,16 +64,17 @@ extension HomeView {
     }
     
     private var searchButton: some View {
-        Button(action: {
-            
-        }, label: {
+        NavigationLink {
+            ProfileView(nickname: viewModel.searchNickName)
+        } label: {
             Text("검색")
                 .foregroundStyle(Color.white)
                 .padding(.vertical, 15)
                 .frame(maxWidth: .infinity)
                 .background(Color.black)
                 .cornerRadius(5)
-        })
+                .opacity(viewModel.searchable ? 1 : 0.4)
+        }.disabled(!viewModel.searchable)
     }
 }
 
