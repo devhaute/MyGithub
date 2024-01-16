@@ -88,6 +88,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2A50D6812B56E2D000C78F97 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				2A50D67A2B567CAE00C78F97 /* APIRequest.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		2A8249672B519B9500EC14CE = {
 			isa = PBXGroup;
 			children = (
@@ -114,8 +122,8 @@
 				2AC9E2F92B51A03A0088B76E /* Utilities */,
 				2AC9E2F02B519F1B0088B76E /* Injected */,
 				2AC9E2F32B519F400088B76E /* Models */,
-				2AC9E2F82B51A0230088B76E /* Services */,
 				2AC9E2F12B519F260088B76E /* Repositories */,
+				2AC9E2F82B51A0230088B76E /* Services */,
 				2AC9E2F22B519F390088B76E /* Presentation */,
 				2A50D66F2B55ACD600C78F97 /* Extensions */,
 				2AC9E2F72B51A0120088B76E /* Resources */,
@@ -150,6 +158,7 @@
 		2AC9E2F12B519F260088B76E /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				2A50D6812B56E2D000C78F97 /* Api */,
 				2A50D6782B567AA300C78F97 /* BaseRepository.swift */,
 				2A50D65F2B55315100C78F97 /* UserRepository.swift */,
 			);
@@ -211,7 +220,6 @@
 		2AC9E2F92B51A03A0088B76E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2A50D67A2B567CAE00C78F97 /* APIRequest.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
