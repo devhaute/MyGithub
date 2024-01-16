@@ -42,7 +42,7 @@ extension HomeView {
     }
     
     private var textField: some View {
-        TextField("닉네임을 입력해주세요", text: $viewModel.searchNickName)
+        TextField("닉네임을 입력해주세요", text: $viewModel.searchUserId)
             .textInputAutocapitalization(.none)
             .frame(maxWidth: .infinity)
             .padding(.trailing, 25)
@@ -55,8 +55,8 @@ extension HomeView {
                         .foregroundColor(Color.black)
                         .offset(y: -2)
                 }
-                    .opacity(viewModel.searchNickName.isEmpty ? 0 : 1)
-                    .animation(.bouncy, value: viewModel.searchNickName)
+                    .opacity(viewModel.searchUserId.isEmpty ? 0 : 1)
+                    .animation(.bouncy, value: viewModel.searchUserId)
                     .onTapGesture {
                         viewModel.resetTextField()
                     }
@@ -65,7 +65,7 @@ extension HomeView {
     
     private var searchButton: some View {
         NavigationLink {
-            ProfileView(nickname: viewModel.searchNickName)
+            ProfileView(userId: viewModel.searchUserId)
         } label: {
             Text("검색")
                 .foregroundStyle(Color.white)

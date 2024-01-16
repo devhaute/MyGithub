@@ -8,9 +8,9 @@
 import Foundation
 
 final class HomeViewModel: ObservableObject {
-    @Published var searchNickName: String = ""
+    @Published var searchUserId: String = ""
     var searchable: Bool {
-        !searchNickName.isEmpty
+        !searchUserId.isEmpty
     }
 }
 
@@ -18,6 +18,6 @@ final class HomeViewModel: ObservableObject {
 
 extension HomeViewModel {
     func resetTextField() {
-        searchNickName = ""
+        searchUserId = ""
     }
 }

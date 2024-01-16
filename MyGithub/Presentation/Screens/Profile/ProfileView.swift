@@ -6,15 +6,20 @@
 //
 
 import SwiftUI
+import Factory
 
 struct ProfileView: View {
-    let nickname: String
+    @InjectedObject(\.profileViewModel) private var viewModel
+    let userId: String
     
     var body: some View {
-        Text("Hello, World! \(nickname)!")
+        Text("Hello, World! \(viewModel.user?.id ?? "")!")
+            .onAppear {
+                viewModel.fetchUser(userId: userId)
+            }
     }
 }
 
 #Preview {
-    ProfileView(nickname: "devhaute")
+    ProfileView(userId: "devhaute")
 }
