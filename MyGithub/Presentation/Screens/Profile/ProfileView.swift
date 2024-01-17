@@ -21,5 +21,6 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(userId: "devhaute")
+    Container.shared.userService.register { StubUserService() }
+    return ProfileView(userId: "devhaute")
 }

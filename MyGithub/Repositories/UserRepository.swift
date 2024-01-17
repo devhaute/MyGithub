@@ -12,7 +12,7 @@ protocol UserRepositoryProtocol: BaseRepository {
     func getUser(userId: String) -> AnyPublisher<User, Error>
 }
 
-final class UserRepository: UserRepositoryProtocol {
+struct UserRepository: UserRepositoryProtocol {
     let session: URLSession
     let baseURL: String
     
