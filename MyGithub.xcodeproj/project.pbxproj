@@ -16,6 +16,7 @@
 		2A50D6792B567AA300C78F97 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50D6782B567AA300C78F97 /* BaseRepository.swift */; };
 		2A50D67B2B567CAE00C78F97 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50D67A2B567CAE00C78F97 /* APIRequest.swift */; };
 		2A50D67D2B569CE800C78F97 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50D67C2B569CE800C78F97 /* AppEnvironment.swift */; };
+		2A50D6832B56E35800C78F97 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50D6822B56E35800C78F97 /* Logger.swift */; };
 		2A8249742B519B9500EC14CE /* MyGithubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8249732B519B9500EC14CE /* MyGithubApp.swift */; };
 		2A8249782B519B9600EC14CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A8249772B519B9600EC14CE /* Assets.xcassets */; };
 		2A82497B2B519B9600EC14CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A82497A2B519B9600EC14CE /* Preview Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		2A50D6782B567AA300C78F97 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		2A50D67A2B567CAE00C78F97 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		2A50D67C2B569CE800C78F97 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		2A50D6822B56E35800C78F97 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		2A8249702B519B9500EC14CE /* MyGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8249732B519B9500EC14CE /* MyGithubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGithubApp.swift; sourceTree = "<group>"; };
 		2A8249772B519B9600EC14CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		2AC9E2F92B51A03A0088B76E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2A50D6822B56E35800C78F97 /* Logger.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				2AC9E3022B53DB020088B76E /* AppImage.swift in Sources */,
 				2A50D67D2B569CE800C78F97 /* AppEnvironment.swift in Sources */,
 				2A50D65E2B55308700C78F97 /* ProfileViewModel.swift in Sources */,
+				2A50D6832B56E35800C78F97 /* Logger.swift in Sources */,
 				2A50D65A2B552E0F00C78F97 /* User.swift in Sources */,
 				2A50D65C2B552F5B00C78F97 /* MockedData.swift in Sources */,
 				2A50D6772B566C9200C78F97 /* UserService.swift in Sources */,

@@ -10,8 +10,8 @@ import Foundation
 extension User {
     static let mockedData: Self = .init(
         id: "devhaute",
-        avatarURL: "https://avatars.githubusercontent.com/u/90536403?v=4",
         htmlURL: "https://github.com/devhaute",
+        avatarURL: "https://avatars.githubusercontent.com/u/90536403?v=4",
         name: "Devhaute",
         location: "Korea, Seoul",
         bio: "🍎 Swift Developer (2021.9.12 ~ )",

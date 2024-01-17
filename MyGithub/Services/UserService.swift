@@ -18,7 +18,5 @@ final class UserService: UserServiceProtocol {
     
     func getUser(userId: String) -> AnyPublisher<User, Error> {
         userRepository.getUser(userId: userId)
-        // TODO: - OSLog 적용하기
-        // Catch Publisher 추가
     }
 }
