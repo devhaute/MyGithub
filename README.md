@@ -1,4 +1,4 @@
-# MyGithub (추후 수정)
+# MyGithub (추후 README 파일 정리)
 SwiftUI + Combine + MVVM + Clean Architecture + DI Container(Factory) + Unit Testing + Github open API를 활용한 앱
 
 ## Home View
