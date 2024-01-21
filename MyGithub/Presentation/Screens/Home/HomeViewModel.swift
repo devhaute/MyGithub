@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class HomeViewModel: ObservableObject {
+final class HomeViewModel: BaseViewModel {
     @Published var searchUserId: String = ""
     var searchable: Bool {
         !searchUserId.isEmpty

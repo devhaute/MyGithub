@@ -8,9 +8,10 @@
 import Combine
 import Factory
 
-final class ProfileViewModel: ObservableObject {
+final class ProfileViewModel: BaseViewModel {
     @Injected(\.userService) private var service
-    @Published var user: User?
+    @Published var user: User = .emptyData
+    @Published var error: Error?
     
     private var cancellables = Set<AnyCancellable>()
 }
@@ -20,11 +21,11 @@ final class ProfileViewModel: ObservableObject {
 extension ProfileViewModel {
     func fetchUser(userId: String) {
         service.getUser(userId: userId)
-            .sink { completion in
+            .sink { [weak self] completion in
                 switch completion {
                 case .finished:()
-                case .failure:()
-//                    print("error! \(error)")
+                case .failure(let error):
+                    self?.error = error
                 }
             } receiveValue: { [weak self] user in
                 self?.user = user

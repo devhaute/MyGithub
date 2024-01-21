@@ -14,10 +14,12 @@ struct ProfileView: View {
     let userId: String
     
     var body: some View {
-        VStack {
-            avatar
-            profile
-            safariLink
+        BaseView(viewModel: viewModel) {
+            VStack {
+                avatar
+                profile
+                safariLink
+            }
         }
         .onAppear {
             viewModel.fetchUser(userId: userId)
@@ -31,7 +33,7 @@ extension ProfileView {
         
         return (
             LazyImage(
-                source: viewModel.user?.avatarURL,
+                source: viewModel.user.avatarURL,
                 resizingMode: .aspectFit
             )
             .clipShape(Circle())
@@ -51,15 +53,15 @@ extension ProfileView {
     
     private var profile: some View {
         VStack {
-            Text(viewModel.user?.id ?? "")
+            Text(viewModel.user.id)
                 .font(.title)
-            Text("🏠 \(viewModel.user?.location ?? "")")
-            Text(viewModel.user?.bio ?? "")
+            Text("🏠 \(viewModel.user.location ?? "")")
+            Text(viewModel.user.bio ?? "")
             
             HStack {
-                Text("Repos: \(viewModel.user?.publicRepos ?? 0)")
-                Text("Followers: \(viewModel.user?.followers ?? 0)")
-                Text("Following: \(viewModel.user?.following ?? 0)")
+                Text("Repos: \(viewModel.user.publicRepos)")
+                Text("Followers: \(viewModel.user.followers)")
+                Text("Following: \(viewModel.user.following)")
             }
             .padding(.top, 10)
         }
@@ -67,7 +69,7 @@ extension ProfileView {
     
     @ViewBuilder
     private var safariLink: some View {
-        if let htmlURL = URL(string: viewModel.user?.htmlURL ?? "") {
+        if let htmlURL = URL(string: viewModel.user.htmlURL) {
             Link(destination: htmlURL) {
                 Text("웹페이지에서 보기")
                     .padding(.top, 50)

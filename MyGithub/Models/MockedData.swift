@@ -8,6 +8,19 @@
 import Foundation
 
 extension User {
+    static let emptyData: Self = .init(
+        id: "",
+        htmlURL: "",
+        avatarURL: "",
+        name: "",
+        location: "",
+        bio: "",
+        publicRepos: 0,
+        publicGists: 0,
+        followers: 0,
+        following: 0
+    )
+    
     static let mockedData: Self = .init(
         id: "devhaute",
         htmlURL: "https://github.com/devhaute",
