@@ -24,10 +24,10 @@ extension BaseRepository {
                 .dataTaskPublisher(for: urlRequest)
                 .tryMap { (data, response) in
                     guard let code = (response as? HTTPURLResponse)?.statusCode else {
-                        throw APIError.unexpectedResponse
+                        throw NetworkError.unexpectedResponse
                     }
                     guard HTTPCodes.success.contains(code) else {
-                        throw APIError.httpCode(code)
+                        throw NetworkError.httpCode(code)
                     }
                     return data
                 }
@@ -48,7 +48,7 @@ extension BaseRepository {
             """
             🛑 [Error] [\(request.httpMethod  ?? "")] \
              \(request, privacy: .private)
-             Error Type: \(error)
+             Error Message: \(error.localizedDescription)
             """
         )
     }

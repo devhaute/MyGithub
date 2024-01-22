@@ -14,26 +14,10 @@ protocol APIRequestProtocol {
     func body() throws -> Data?
 }
 
-enum APIError: Error {
-    case invalidURL
-    case httpCode(HTTPCode)
-    case unexpectedResponse
-}
-
-extension APIError: LocalizedError {
-    var errorDescription: String? {
-        switch self {
-        case .invalidURL: return "Invalid URL"
-        case let .httpCode(code): return "Unexpected HTTP code: \(code)"
-        case .unexpectedResponse: return "Unexpected response from the server"
-        }
-    }
-}
-
 extension APIRequestProtocol {
     func urlRequest(baseURL: String) throws -> URLRequest {
         guard let url = URL(string: baseURL + path) else {
-            throw APIError.invalidURL
+            throw NetworkError.invalidURL
         }
         var request = URLRequest(url: url)
         request.httpMethod = method

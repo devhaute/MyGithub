@@ -26,9 +26,7 @@ where LoadedView: View {
         case .loaded:
             loadedView()
         case .failed(let error):
-            ErrorView(error: error) {
-                // TODO: -> Retry 구현
-            }
+            ErrorView(error: error)
         }
     }
 }

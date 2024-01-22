@@ -11,7 +11,6 @@ import Factory
 final class ProfileViewModel: BaseViewModel {
     @Injected(\.userService) private var service
     @Published var user: User = .emptyData
-    @Published var error: Error?
     
     private var cancellables = Set<AnyCancellable>()
 }
@@ -25,10 +24,11 @@ extension ProfileViewModel {
                 switch completion {
                 case .finished:()
                 case .failure(let error):
-                    self?.error = error
+                    self?.viewState = .failed(error)
                 }
             } receiveValue: { [weak self] user in
                 self?.user = user
+                self?.viewState = .loaded
             }
             .store(in: &cancellables)
     }

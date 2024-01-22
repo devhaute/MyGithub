@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct ErrorView: View {
     let error: Error
-    let retryAction: () -> Void
     
     var body: some View {
         VStack {
@@ -21,7 +18,6 @@ struct ErrorView: View {
                 .font(.callout)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 40).padding()
-            Button(action: retryAction, label: { Text("Retry").bold() })
         }
     }
 }
@@ -32,7 +28,6 @@ struct ErrorView: View {
             domain: "",
             code: 0,
             userInfo: [NSLocalizedDescriptionKey: "Something went wrong"]
-        ),
-        retryAction: {}
+        )
     )
 }

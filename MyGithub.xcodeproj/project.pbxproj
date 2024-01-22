@@ -31,6 +31,7 @@
 		2AC9E3072B53E1DD0088B76E /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9E3062B53E1DD0088B76E /* View+Extension.swift */; };
 		2AC9E30F2B53E76C0088B76E /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9E30E2B53E76C0088B76E /* Container.swift */; };
 		2AC9E3122B54276C0088B76E /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC9E3112B54276C0088B76E /* Factory */; };
+		2ACB54002B5E7C2400E7F7BE /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACB53FF2B5E7C2400E7F7BE /* AppError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		2AC9E3032B53DD620088B76E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2AC9E3062B53E1DD0088B76E /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		2AC9E30E2B53E76C0088B76E /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		2ACB53FF2B5E7C2400E7F7BE /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 			children = (
 				2AC9E3012B53DB020088B76E /* AppImage.swift */,
 				2A50D67C2B569CE800C78F97 /* AppEnvironment.swift */,
+				2ACB53FF2B5E7C2400E7F7BE /* AppError.swift */,
 			);
 			path = "App Files";
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				2A50D67B2B567CAE00C78F97 /* APIRequest.swift in Sources */,
 				2AC9E3042B53DD620088B76E /* HomeViewModel.swift in Sources */,
 				2A50D6892B58340300C78F97 /* Shared.swift in Sources */,
+				2ACB54002B5E7C2400E7F7BE /* AppError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
