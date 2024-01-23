@@ -20,6 +20,8 @@ struct UserService: UserServiceProtocol {
     
     func getUser(userId: String) -> AnyPublisher<User, Error> {
         userRepository.getUser(userId: userId)
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
 }
 

@@ -36,7 +36,6 @@ extension BaseRepository {
                     logError(urlRequest, error)
                     throw error
                 }
-                .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
         } catch let error {
             return Fail<Value, Error>(error: error).eraseToAnyPublisher()
@@ -48,7 +47,7 @@ extension BaseRepository {
             """
             🛑 [Error] [\(request.httpMethod  ?? "")] \
              \(request, privacy: .private)
-             Error Message: \(error.localizedDescription)
+             Error Type: \(error)
             """
         )
     }

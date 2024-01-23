@@ -23,6 +23,10 @@ struct UserRepository: UserRepositoryProtocol {
     
     func getUser(userId: String) -> AnyPublisher<User, Error> {
         return call(endpoint: EndPoints.getUser(userId))
+            .mapError { _ in
+                AppError.userNotFound
+            }
+            .eraseToAnyPublisher()
     }
 }
 

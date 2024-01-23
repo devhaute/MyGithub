@@ -12,10 +12,8 @@ struct ErrorView: View {
     
     var body: some View {
         VStack {
-            Text("An Error Occured")
-                .font(.title)
             Text(error.localizedDescription)
-                .font(.callout)
+                .font(.title)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 40).padding()
         }
